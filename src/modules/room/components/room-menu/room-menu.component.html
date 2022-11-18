@@ -1,0 +1,20 @@
+<div class="room-menu">
+  <div class="room-meanu-header">
+    <h3>Rooms</h3>
+    <!-- TODO  -->
+    <button nz-button nzType="default" nzGhost (click)="modal.open()">
+      <i nz-icon nzType="plus"></i>
+    </button>
+  </div>
+  <!--
+    TODO itérer sur les rooms. Au clic, naviguer sur la room sélectionnée.
+    Remplacer [id de la room] par l'id de la room itérée
+  -->
+  <div *ngFor="let room of rooms" class="room-menu-item">
+    <div (click)="navigateToRoom(room)" class="room-menu-item-name">
+      <i nz-icon nzType="team"></i>
+      <span>{{ room.name }}</span>
+    </div>
+  </div>
+</div>
+<app-room-create-modal #modal></app-room-create-modal>
